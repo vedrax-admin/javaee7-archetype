@@ -1,2 +1,9 @@
 # javaee7-archetype
-This is a template creating by Vedrax SAS
+
+In order to generate the archetype use the following cmd:
+
+mvn archetype:generate 	-DarchetypeGroupId=com.vedrax 
+						-DarchetypeArtifactId=vedrax-javaee7-archetype  
+						-DarchetypeVersion=1.0-SNAPSHOT 
+						-DgroupId=com.vedrax 
+						-DartifactId=myapp
