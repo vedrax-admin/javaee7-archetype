@@ -1,2 +1,2 @@
 # javaee7-archetype
-Java EE 7 Archetype Maven
+This is a template creating by Vedrax SAS
