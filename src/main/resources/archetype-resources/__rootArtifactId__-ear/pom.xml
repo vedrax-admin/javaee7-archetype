@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <!-- Basic properties -->
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>${artifactId}</artifactId>
+    <name>${rootArtifactId} EAR module</name>
+	
+    <parent>
+        <groupId>${groupId}</groupId>
+        <artifactId>${rootArtifactId}</artifactId>
+        <version>${version}</version>
+    </parent>
+	
+    <packaging>ear</packaging>
+	
+    <dependencies>
+        <!-- INTERNAL DEPENDENCIES -->
+        <dependency>
+            <groupId>${groupId}</groupId>
+            <artifactId>${rootArtifactId}-web</artifactId>
+            <version>${version}</version>
+            <type>war</type>
+        </dependency>
+
+        <dependency>
+            <groupId>${groupId}</groupId>
+            <artifactId>${rootArtifactId}-ejb</artifactId>
+            <version>${version}</version>
+            <type>ejb</type>
+        </dependency>
+		
+        <dependency>
+            <groupId>${groupId}</groupId>
+            <artifactId>${rootArtifactId}-api</artifactId>
+            <version>${version}</version>
+            <type>jar</type>
+        </dependency>
+	
+        <!-- Primefaces UI - Provider:Local  -->
+        <dependency>
+            <groupId>org.primefaces</groupId>
+            <artifactId>primefaces</artifactId>
+            <type>jar</type>
+        </dependency>    
+        <dependency>
+            <groupId>org.primefaces</groupId>
+            <artifactId>primefaces-metroui</artifactId>
+            <type>jar</type>
+        </dependency>
+    </dependencies>
+	
+    <build>
+        <plugins>
+            <!--Ear plugin -creating the ear - watch out skinny WARS!-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-ear-plugin</artifactId>
+                <configuration>
+                    <defaultLibBundleDir>lib/</defaultLibBundleDir>
+                    <skinnyWars>true</skinnyWars>
+                    <modules>
+                        <webModule>
+                            <groupId>${groupId}</groupId>
+                            <artifactId>${rootArtifactId}-web</artifactId>
+                            <contextRoot>/${rootArtifactId}</contextRoot>
+                        </webModule>
+                        <ejbModule>
+                            <groupId>${groupId}</groupId>
+                            <artifactId>${rootArtifactId}-ejb</artifactId>
+                        </ejbModule>
+                        <jarModule>
+                            <groupId>${groupId}</groupId>
+                            <artifactId>${rootArtifactId}-api</artifactId>
+                        </jarModule>
+                    </modules>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+	
+</project>
