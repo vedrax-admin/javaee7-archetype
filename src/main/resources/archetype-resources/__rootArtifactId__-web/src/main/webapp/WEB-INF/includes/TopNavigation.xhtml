@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+    
+    <h:form>
+        
+        <ul class="top-links layout">
+            <li><h:link outcome="/secure/index" value="#{msg['button.home']}"/></li>
+            <li><p:commandLink process="@this" value="#{msg['button.about']}" onclick="PF('about1').show();"/></li>
+            <li><h:link outcome="/admin/index" value="#{msg['button.admin']}"/></li>
+            <li><p:commandLink ajax="false" action="#{authenticationController.logout}" value="#{msg['button.logout']}"/></li>
+        </ul>
+        
+        <p:dialog header="About" id="popup" modal="true" widgetVar="about1">
+            <p>#{msg['about.title']}</p>
+            <h:graphicImage library="images" name="cloud-lab.png" />
+            <br />
+            <p>#{msg['footer.message']}</p>
+        </p:dialog>
+        
+    </h:form>
+    
+</ui:composition>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <body>
+        <ui:composition template="/WEB-INF/templates/main_error.xhtml">
+            <ui:define name="body">
+                <p:fieldset legend="#{msg['error.businessException']}">
+                    <h:panelGrid columns="2" cellpadding="5">
+                        <h:graphicImage library="images" name="process.png"/>
+                        <ul>
+                          
+                            <li>#{msg['error.user']}: #{header['user-agent']}</li>
+                            <li>#{msg['error.uri']}: #{requestScope['javax.servlet.error.request_uri']}</li>
+                            <li>#{msg['error.ajax']}: #{facesContext.partialViewContext.ajaxRequest ? 'Yes' : 'No'}</li>
+                            <li>#{msg['error.message']}: #{requestScope['javax.servlet.error.message']}</li>
+                           
+                        </ul>
+                        <h:link outcome="/secure/index" value="#{msg['button.home']}"/>
+                    </h:panelGrid>
+                </p:fieldset>
+            </ui:define>
+        </ui:composition>
+    </body>
+</html>

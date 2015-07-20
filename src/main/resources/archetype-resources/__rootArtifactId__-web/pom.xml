@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <!-- Basic properties -->
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>${artifactId}</artifactId>
+    <name>${rootArtifactId} Web module</name>
+	
+    <parent>
+        <groupId>${groupId}</groupId>
+        <artifactId>${rootArtifactId}</artifactId>
+        <version>${version}</version>
+    </parent>
+	
+    <packaging>war</packaging>
+    
+    <dependencies>
+
+        <!-- EJB REFERENCE -->
+        <dependency>
+            <groupId>${groupId}</groupId>
+            <artifactId>${rootArtifactId}-ejb</artifactId>
+            <version>${version}</version>
+        </dependency>
+		
+        <!-- API REFERENCE -->
+        <dependency>
+            <groupId>${groupId}</groupId>
+            <artifactId>${rootArtifactId}-api</artifactId>
+            <version>${version}</version>
+        </dependency>
+		
+        <!-- Java EE 7 - Provider:Container  -->
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Primefaces UI - Provider:EAR  -->
+        <dependency>
+            <groupId>org.primefaces</groupId>
+            <artifactId>primefaces</artifactId>
+            <type>jar</type>
+            <scope>provided</scope>
+        </dependency>    
+        <dependency>
+            <groupId>org.primefaces</groupId>
+            <artifactId>primefaces-metroui</artifactId>
+            <type>jar</type>
+            <scope>provided</scope>
+        </dependency>
+        
+        <!-- Testing framework - Provider:Local -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <type>jar</type>
+        </dependency>
+    </dependencies>	
+	
+    <build>
+        <finalName>${rootArtifactId}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifestEntries>
+                            <Class-Path>${rootArtifactId}-ejb-${version}.jar</Class-Path>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+	
+</project>
