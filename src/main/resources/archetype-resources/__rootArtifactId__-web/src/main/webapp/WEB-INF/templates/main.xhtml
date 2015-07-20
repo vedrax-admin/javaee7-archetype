@@ -2,41 +2,77 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
 
     <h:head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <title><ui:insert name="title">Cloud Lab</ui:insert></title>
         <h:outputStylesheet library="css" name="layout.css"/>
+        <h:outputStylesheet library="css" name="box.css"/>
+        <h:outputStylesheet library="css" name="menu.css"/>
     </h:head>
 
     <h:body>
         <div id="container">
             <div id="header">
-                <div class="right-controls">
-                    <p>#{currentUserId}</p>
-                </div>
+                <h:graphicImage library="images" name="header.png"/>
             </div>
             <div id="nav">
                 <div class="right-controls">
-                    <ui:include src="/WEB-INF/includes/TopNavigation.xhtml"/>
+                    <h:form>
+                        <ul>
+                            <li>
+                                <h:link outcome="/secure/index">
+                                    <h:graphicImage library="images" name="home.png"/>
+                                    <span>#{msg['button.home']}</span>
+                                </h:link>
+                            </li>
+                            <li>
+                                <p:commandLink process="@this" onclick="PF('about1').show();">
+                                    <h:graphicImage library="images" name="about.png"/>
+                                    <span>#{msg['button.about']}</span>
+                                </p:commandLink>
+                            </li>
+                            <li>
+                                <h:link outcome="/admin/index" rendered="#{securityRole eq 'ADMIN'}">
+                                    <h:graphicImage library="images" name="settings.png"/>
+                                    <span>#{msg['button.admin']}</span>
+                                </h:link>
+                            </li>
+                            <li>
+                                <p:commandLink ajax="false" action="#{authenticationController.logout}">
+                                    <h:graphicImage library="images" name="logout.png"/>
+                                    <span>#{msg['button.logout']}</span>
+                                </p:commandLink>
+                            </li>
+                        </ul>
+
+                        <p:dialog header="About" id="popup" modal="true" widgetVar="about1">
+                            <p>#{msg['about.title']}</p>
+                            <h:graphicImage library="images" name="cloud-lab.png" />
+                            <br />
+                            <p>#{msg['footer.message']}</p>
+                        </p:dialog>
+                    </h:form>
+                </div>
+                <div class="left-controls">
+                    <ul>
+                        <li>
+                            <h:graphicImage library="images" name="user.png"/>
+                            <span class="user">#{currentUserId}</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
-
-            <div id="left">
-                <ul id="main-nav">
-                    
-                </ul>
+            <div id="content">
+                <div id="content-title">
+                    <h1><ui:insert name="contentTitle"/></h1>
+                </div>
+                <div id="content-area">
+                    <ui:insert name="body"/>
+                </div>
             </div>
-
-            <div id="right">
-                <ui:insert name="body"/>
-            </div>
-
-            <div id="footer">
-                <h:outputText
-                    value="#{msg['footer.message']}" />
-            </div>
-        </div> 
+        </div>
     </h:body>
 </html>

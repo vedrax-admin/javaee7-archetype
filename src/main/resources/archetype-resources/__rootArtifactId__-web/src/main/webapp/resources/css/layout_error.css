@@ -1,9 +1,18 @@
 @CHARSET "UTF-8";
 
+/*
+* Vedrax SAS v1.0.0
+* Author: PENCHENAT REMY
+* General Layout for Error Page
+*/
+
+/*----------GENERAL STYLE-------------
+------------------------------------*/
+
 body {
     margin: 0;
     padding: 0;
-    background: #94aebc url("#{resource['images/body-bg.png']}") left bottom repeat;
+    background: #60758a;
     font: normal 12px "Lucida Sans Unicode", "Lucida Grande", Geneva, Verdana, Arial, sans-serif;
 }
 
@@ -45,7 +54,7 @@ h1 {
     float: right;
     margin: 8px 15px 0 0;
     text-align: right;
-    color: #E0E0E0;
+    color: #3798cf;
     font: 13px "Lucida Sans Unicode", "Lucida Grande", Geneva, Verdana, Arial, sans-serif;
 }
 

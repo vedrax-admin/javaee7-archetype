@@ -1,0 +1,59 @@
+@CHARSET "UTF-8";
+
+/*
+* Vedrax SAS v1.0.0
+* Author: PENCHENAT REMY
+* Box Layout Style
+*/
+
+/* BOX =============================================================================*/
+
+.box{
+    position: relative;
+    border-radius: 3px;
+    background:#ffffff;
+    border-top: 3px solid #3798cf;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+/* BOX-HEADER =======================================================================*/
+
+.box-header{
+    color: #444;
+    display:block;
+    padding: 10px;
+    position: relative;
+}
+
+/* BOX-TITLE ========================================================================*/
+
+.box-title{
+    display: inline-block;
+    font-size: 16px;
+    margin: 0;
+    line-height: 1;
+}
+
+/* BOX-BODY =========================================================================*/
+
+.box-body{
+    border-top-left-radius:0;
+    border-top-right-radius:0;
+    border-bottom-left-radius:3px;
+    border-bottom-right-radius:3px;
+    padding:10px;
+    color:#4d5258;
+}
+
+/* BOX-FOOTER ========================================================================*/
+
+.box-footer{
+    border-top-left-radius:0;
+    border-top-right-radius:0;
+    border-bottom-left-radius:3px;
+    border-bottom-right-radius:3px;
+    border-top:1px solid #f4f4f4;
+    padding: 10px;
+    background-color:#ffffff;
+}
