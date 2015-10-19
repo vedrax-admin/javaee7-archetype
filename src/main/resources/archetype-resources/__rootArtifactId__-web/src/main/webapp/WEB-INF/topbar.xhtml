@@ -1,0 +1,36 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+
+
+    <!-- TOPBAR START -->
+    <div id="layout-topbar">
+
+        <a id="menu-button" class="Animated1">
+            <span id="menuline1" class="Animated05"></span>
+            <span id="menuline2" class="Animated05"></span>
+            <span id="menuline3" class="Animated05"></span>
+        </a>
+        <a href="/rims-web/secure/index.xhtml"><h:graphicImage name="logo.png" id="logo" library="images" /></a>
+        <div id="vedrax-menu" class="Fright" style="margin: 20px 10px 0px 0px;">
+            <h:form>
+                <p:splitButton value="#{authenticationController.user.fullName}" icon="fa fa-slideshare" appendTo="@this">
+                    <p:menuitem value=" Dashboard" icon="fa fa-home" outcome="/secure/index"/>
+                    <p:separator />
+                    <p:menuitem value=" #{msg['action.admin']}" icon="fa fa-gear" outcome="/secure/document/document"/>
+                    <p:menuitem value=" #{msg['action.logout']}" action="#{authenticationController.logout()}" icon="fa fa-power-off"/>    
+                </p:splitButton> 
+            </h:form>
+        </div>
+    </div>
+    <!-- TOPBAR END -->
+
+   
+
+
+
+
+
+</ui:composition>

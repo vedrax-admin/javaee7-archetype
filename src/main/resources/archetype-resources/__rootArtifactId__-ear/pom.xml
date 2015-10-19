@@ -29,23 +29,17 @@
             <version>${version}</version>
             <type>ejb</type>
         </dependency>
-		
-        <dependency>
-            <groupId>${groupId}</groupId>
-            <artifactId>${rootArtifactId}-api</artifactId>
-            <version>${version}</version>
-            <type>jar</type>
-        </dependency>
-	
-        <!-- Primefaces UI - Provider:Local  -->
+        
+        
+        <!-- Primefaces UI - Provider:EAR  -->
         <dependency>
             <groupId>org.primefaces</groupId>
             <artifactId>primefaces</artifactId>
             <type>jar</type>
-        </dependency>    
+        </dependency>
         <dependency>
             <groupId>org.primefaces</groupId>
-            <artifactId>primefaces-metroui</artifactId>
+            <artifactId>adamantium-theme</artifactId>
             <type>jar</type>
         </dependency>
     </dependencies>
@@ -69,10 +63,6 @@
                             <groupId>${groupId}</groupId>
                             <artifactId>${rootArtifactId}-ejb</artifactId>
                         </ejbModule>
-                        <jarModule>
-                            <groupId>${groupId}</groupId>
-                            <artifactId>${rootArtifactId}-api</artifactId>
-                        </jarModule>
                     </modules>
                 </configuration>
             </plugin>

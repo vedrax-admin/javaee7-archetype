@@ -28,10 +28,5 @@
         </developer>
     </developers>
     
-    <scm>
-        <connection>scm:git:git@github.com:vedrax-admin/javaee7-archetype.git</connection>
-        <developerConnection>scm:git:git@github.com:vedrax-admin/javaee7-archetype.git</developerConnection>
-        <url>git@github.com:vedrax-admin/javaee7-archetype.git</url>
-    </scm>
   
 </project>

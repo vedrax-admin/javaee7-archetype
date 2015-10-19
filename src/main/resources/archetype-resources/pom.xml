@@ -13,7 +13,6 @@
         <module>${rootArtifactId}-ejb</module>
         <module>${rootArtifactId}-web</module>
         <module>${rootArtifactId}-ear</module>
-        <module>${rootArtifactId}-api</module>
     </modules>
 	
     <properties>
@@ -26,8 +25,6 @@
         <war-plugin-version>2.4</war-plugin-version>
         <ear-plugin-version>2.9</ear-plugin-version>
         <compiler-plugin-version>3.1</compiler-plugin-version>
-        <surefire-plugin.version>2.17</surefire-plugin.version>
-        <maven-dependency-plugin-version>2.8</maven-dependency-plugin-version>
         <!-- dependency versions -->
         <javaee-api-version>7.0</javaee-api-version>
         <!-- EJB spec version -->
@@ -38,17 +35,14 @@
         <!-- Apache Commons -->
         <commons-version>3.3.2</commons-version>	
         <commons-codec>1.4</commons-codec>
-        <!-- Logging -->
-        <log4j-version>2.1</log4j-version>
-        <!-- UI Framework -->
-        <primefaces-version>5.1</primefaces-version>
-        <metroui-version>1.0</metroui-version>
         <!-- Hibernate Framework -->
         <hibernate-em-version>4.3.8.Final</hibernate-em-version>
         <hibernate-validator-version>5.1.3.Final</hibernate-validator-version>
         <el.version>2.2.4</el.version>
         <!-- Mysql driver -->
-        <mysql.version>5.1.31</mysql.version>     
+        <mysql.version>5.1.31</mysql.version> 
+        <!-- UI Framework -->
+        <primefaces-version>5.2</primefaces-version>    
     </properties>
 	
     <dependencyManagement>
@@ -70,18 +64,6 @@
                 <artifactId>commons-codec</artifactId>
                 <version>${commons-codec}</version>
             </dependency>
-
-            <!-- Logging : Log4j v2 -->
-            <dependency>
-                <groupId>org.apache.logging.log4j</groupId>
-                <artifactId>log4j-api</artifactId>
-                <version>${log4j-version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.logging.log4j</groupId>
-                <artifactId>log4j-core</artifactId>
-                <version>${log4j-version}</version>
-            </dependency>
             <!-- Testing framework -->
             <dependency>
                 <groupId>junit</groupId>
@@ -94,17 +76,6 @@
                 <artifactId>mockito-core</artifactId>
                 <version>${mockito-version}</version>
                 <scope>test</scope>
-            </dependency>
-            <!-- UI framework -->
-            <dependency>
-                <groupId>org.primefaces</groupId>
-                <artifactId>primefaces</artifactId>
-                <version>${primefaces-version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.primefaces</groupId>
-                <artifactId>primefaces-metroui</artifactId>
-                <version>${metroui-version}</version>
             </dependency>
             <!-- JPA Provider - Provider:Container -->
             <dependency>
@@ -135,7 +106,18 @@
                 <artifactId>mysql-connector-java</artifactId>
                 <version>${mysql.version}</version>
                 <scope>test</scope>
-            </dependency>       
+            </dependency>  
+            <!-- Primefaces Version -->
+            <dependency>
+                <groupId>org.primefaces</groupId>
+                <artifactId>primefaces</artifactId>
+                <version>${primefaces-version}</version>
+            </dependency>   
+            <dependency>
+                <groupId>org.primefaces</groupId>
+                <artifactId>adamantium-theme</artifactId>
+                <version>1.0</version>
+            </dependency>     
         </dependencies>
     </dependencyManagement>
 
@@ -203,18 +185,6 @@
                             </resource>
                         </webResources>
                     </configuration>
-                </plugin>
-                <!-- Surefire Plugin -->
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-surefire-plugin</artifactId>
-                    <version>${surefire-plugin.version}</version>
-                </plugin>
-                <!-- Maven Dependency Plugin -->
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-dependency-plugin</artifactId>
-                    <version>${maven-dependency-plugin-version}</version>
                 </plugin>
             </plugins>
         </pluginManagement>

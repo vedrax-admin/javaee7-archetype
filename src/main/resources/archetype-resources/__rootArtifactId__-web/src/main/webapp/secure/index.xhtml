@@ -1,17 +1,50 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:p="http://primefaces.org/ui">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="/WEB-INF/template.xhtml">
 
-    <h:body>
-        <ui:composition template="/WEB-INF/templates/main.xhtml">
-            <ui:define name="title">#{msg['button.home']}</ui:define>
-            <ui:define name="contentTitle">#{msg['button.home']}</ui:define>
-            <ui:define name="body">
-                <h1>#{msg['main.message']}</h1>
-            </ui:define>
-        </ui:composition>
-    </h:body>
-</html>
+
+
+    <ui:define name="subheader">
+        Dashboard
+    </ui:define>
+
+    <ui:define name="content">
+        <!-- Left -->
+        <div class="Container50 Responsive100">
+            <div class="Container100">
+                <div class="ContainerIndent">
+                    <div class="Card">
+                        <div class="CardTopic"> <i class="fa fa-slideshare Fs30 Fleft MarRight10"></i> 
+                            Welcome, NAME <br/>
+                            <span class="CardSubTopic">UNIT </span> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right -->
+        <div class="Container50 Responsive100">
+            <div class="Container100">
+                <div class="ContainerIndent">
+                    <div class="Card">
+                        <div class="CardTopic"> <i class="icon-clipboard Fs30 Fleft MarRight10"></i> 
+                            EVENT <br/>
+                            <span class="CardSubTopic">DESCRIPTION </span> 
+                        </div>
+                        <div class="SeparatorFull"></div>
+                        <div class="Container100">
+                            <div class="ContainerIndent">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ui:define>
+
+</ui:composition>

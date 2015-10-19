@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:cc="http://xmlns.jcp.org/jsf/composite">
+
+    <!-- INTERFACE -->
+    <cc:interface>
+        <cc:attribute name="save" method-signature="java.lang.String action()" required="true"/>
+        <cc:attribute name="cancel" required="true"/>
+        <cc:attribute name="delete" method-signature="java.lang.String action()" required="true"/>
+        <cc:attribute name="entityId" required="true"/>
+    </cc:interface>
+
+    <!-- IMPLEMENTATION -->
+    <cc:implementation>
+        <div class="EmptyBox10"></div>
+        <div class="SeparatorFull"></div>
+        <p:commandButton action="#{cc.attrs.delete}" value="#{msg['action.delete']}" icon="fa fa-remove" styleClass="Fright BrownButton" rendered="#{!empty cc.attrs.entityId}">
+            <p:confirm header="#{msg['action.confirmation']}" message="#{msg['action.areYouSure']}" icon="fa fa-remove" />
+        </p:commandButton>
+        <p:button outcome="#{cc.attrs.cancel}" value="#{msg['action.cancel']}" icon="fa fa-share" styleClass="Fright GreenButton"/>
+        <p:commandButton 
+            value="#{msg['action.save']}" ajax="false" 
+            validateClient="true" action="#{cc.attrs.save}" 
+            icon="fa fa-save" styleClass="Fright" 
+            rendered="#{empty cc.attrs.entityId}"/>              
+
+
+        <p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+            <p:commandButton value="#{msg['action.yes']}" type="button" styleClass="ui-confirmdialog-yes GreenButton" icon="ui-icon-check fa fa-check Fs14 White" />
+            <p:commandButton value="#{msg['action.no']}" type="button" styleClass="ui-confirmdialog-no RedButton" icon="ui-icon-close fa fa-close Fs14 White" />
+        </p:confirmDialog>
+    </cc:implementation>
+</html>

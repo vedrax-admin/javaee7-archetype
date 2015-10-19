@@ -22,46 +22,36 @@
             <artifactId>${rootArtifactId}-ejb</artifactId>
             <version>${version}</version>
         </dependency>
-		
-        <!-- API REFERENCE -->
-        <dependency>
-            <groupId>${groupId}</groupId>
-            <artifactId>${rootArtifactId}-api</artifactId>
-            <version>${version}</version>
-        </dependency>
-		
+	
         <!-- Java EE 7 - Provider:Container  -->
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-api</artifactId>
             <scope>provided</scope>
         </dependency>
-
+        
+         
         <!-- Primefaces UI - Provider:EAR  -->
         <dependency>
             <groupId>org.primefaces</groupId>
             <artifactId>primefaces</artifactId>
             <type>jar</type>
             <scope>provided</scope>
-        </dependency>    
+        </dependency>
         <dependency>
             <groupId>org.primefaces</groupId>
-            <artifactId>primefaces-metroui</artifactId>
+            <artifactId>adamantium-theme</artifactId>
             <type>jar</type>
             <scope>provided</scope>
         </dependency>
         
-        <!-- Testing framework - Provider:Local -->
+        <!-- Apache commons framework - Provider:Local -->
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
             <type>jar</type>
         </dependency>
-        <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-core</artifactId>
-            <type>jar</type>
-        </dependency>
+      
     </dependencies>	
 	
     <build>
