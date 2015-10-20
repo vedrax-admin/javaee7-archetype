@@ -44,6 +44,7 @@
                         <include>**/*.xhtml</include>
                         <include>**/*.xml</include>
                         <include>**/*.css</include>
+                        <include>**/*.js</include>
                     </includes>
                 </fileSet>
                 <fileSet filtered="false" encoding="UTF-8">
@@ -52,6 +53,11 @@
                         <include>**/*.png</include>
                         <include>**/*.gif</include>
                         <include>**/*.jpg</include>
+                        <include>**/*.eot</include>
+                        <include>**/*.svg</include>
+                        <include>**/*.ttf</include>
+                        <include>**/*.woff</include>
+                        <include>**/*.woff2</include>
                     </includes>
                 </fileSet>
             </fileSets>

@@ -19,7 +19,7 @@
                 <p:splitButton value="#{authenticationController.user.fullName}" icon="fa fa-slideshare" appendTo="@this">
                     <p:menuitem value=" Dashboard" icon="fa fa-home" outcome="/secure/index"/>
                     <p:separator />
-                    <p:menuitem value=" #{msg['action.admin']}" icon="fa fa-gear" outcome="/secure/document/document"/>
+                    <p:menuitem value=" #{msg['action.admin']}" icon="fa fa-gear"/>
                     <p:menuitem value=" #{msg['action.logout']}" action="#{authenticationController.logout()}" icon="fa fa-power-off"/>    
                 </p:splitButton> 
             </h:form>
